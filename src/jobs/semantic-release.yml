@@ -1,11 +1,16 @@
-
 description: >
-  Semantic release job.
+  Publishes a semantic-release.
 
 docker:
   - image: cimg/node:21.2.0
 
 steps:
   - checkout
-  - run: npm install
-  - run: npx semantic-release
+
+  - run:
+      name: Install dependencies
+      command: npm ci          # faster & more reproducible than `npm install`
+
+  - run:
+      name: Run semantic-release
+      command: npx semantic-release
