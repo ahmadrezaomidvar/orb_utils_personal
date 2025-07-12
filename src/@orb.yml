@@ -1,13 +1,11 @@
 version: 2.1
 
 description: >
-  Sample orb description
-# What will your orb allow users to accomplish?
-# Descriptions should be short, simple, and informative.
+  General utilities for CircleCI pipelines. It can be used to simplify common tasks in CircleCI workflows, such as testing, linting, and semantic versioning.
 
 # This information will be displayed in the orb registry and is not mandatory.
 display:
-  home_url: "https://www.example.com/docs"
+  home_url: "https://github.com/ahmadrezaomidvar/orb_utils_personal"
   source_url: "https://github.com/ahmadrezaomidvar/orb_utils_personal"
 
 # If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.

@@ -1,0 +1,12 @@
+description: >
+  You can use semantic-release job to release a new version of the package. It uses semantic-release to determine the next version and create a new release.
+usage:
+  version: 2.1
+  orbs:
+    orb_utils_personal: ahmadrezaomidvar/orb_utils_personal@1.0.0
+  workflows:
+    test-nox:
+      jobs:
+        - orb_utils_personal/semantic-release:
+            context: package-release
+
