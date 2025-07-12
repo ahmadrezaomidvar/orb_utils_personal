@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/ahmadrezaomidvar/orb_utils_personal/compare/v0.2.0...v0.2.1) (2025-07-12)
+
+
+### Bug Fixes
+
+* remove review orb from circleci config ([41fdf5e](https://github.com/ahmadrezaomidvar/orb_utils_personal/commit/41fdf5eae61739bde67ae44f03a9eef42249654a))
+
 # [0.2.0](https://github.com/ahmadrezaomidvar/orb_utils_personal/compare/v0.1.0...v0.2.0) (2025-07-12)
 
 
