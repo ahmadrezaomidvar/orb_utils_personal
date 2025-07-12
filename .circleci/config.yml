@@ -8,21 +8,6 @@ filters: &filters
   tags:
     only: /.*/
 
-jobs:
-  github_release:
-    docker:
-      - image: cimg/node:21.2.0
-    environment:
-      GIT_AUTHOR_NAME: circleci
-      GIT_AUTHOR_EMAIL: ci@users.noreply.github.com
-      GIT_COMMITTER_NAME: circleci
-      GIT_COMMITTER_EMAIL: ci@users.noreply.github.com
-    steps:
-      - checkout
-      - run:
-          name: semantic-release
-          command: npx semantic-release
-
 workflows:
   lint-pack:
     jobs:
@@ -42,8 +27,3 @@ workflows:
           orb_name: ahmadrezaomidvar/orb_utils_personal
           requires: [orb-tools/lint, orb-tools/pack, orb-tools/review, shellcheck/check]
           filters: *filters
-      - github_release:
-          context: version-release
-          filters:
-            branches:
-              only: main

@@ -27,6 +27,24 @@ jobs:
       - image: cimg/base:current
     steps:
       - checkout
+
+  github_release:
+    docker:
+      - image: cimg/node:21.2.0
+    environment:
+      GIT_AUTHOR_NAME: circleci
+      GIT_AUTHOR_EMAIL: ci@users.noreply.github.com
+      GIT_COMMITTER_NAME: circleci
+      GIT_COMMITTER_EMAIL: ci@users.noreply.github.com
+    steps:
+      - checkout
+      - run:
+          name: Install deps
+          command: npm install
+      - run:
+          name: semantic-release
+          command: npx semantic-release
+
 workflows:
   test-deploy:
     jobs:
@@ -47,3 +65,11 @@ workflows:
             - command-test
           context: orb-publishing
           filters: *release-filters
+      - github_release:
+          context: version-release
+          requires:
+            - orb-tools/publish
+          filters:
+            branches:
+              only: main
+
