@@ -1,3 +1,11 @@
+## [0.3.2](https://github.com/ahmadrezaomidvar/orb_utils_personal/compare/v0.3.1...v0.3.2) (2025-07-12)
+
+
+### Bug Fixes
+
+* rename release file ([4f064d6](https://github.com/ahmadrezaomidvar/orb_utils_personal/commit/4f064d63fcfd9cc61582986d494795262123eaf6))
+* Update semantic-release ([12cf3b3](https://github.com/ahmadrezaomidvar/orb_utils_personal/commit/12cf3b359390b1f06bc5ffdbb39630b9295bf034))
+
 ## [0.3.1](https://github.com/ahmadrezaomidvar/orb_utils_personal/compare/v0.3.0...v0.3.1) (2025-07-12)
 
 
