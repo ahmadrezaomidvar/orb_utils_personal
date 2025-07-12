@@ -3,7 +3,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    orb_utils_personal: ahmadrezaomidvar/orb_utils_personal@1.0.0
+    orb_utils_personal: ahmadrezaomidvar/orb_utils_personal@0.1.0
   workflows:
     test-nox:
       jobs:
