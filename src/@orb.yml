@@ -1,7 +1,7 @@
 version: 2.1
 
 description: >
-  General utilities for CircleCI pipelines.
+  General utilities for CircleCI pipelines. It can be used to simplify common tasks in CircleCI workflows, such as testing, linting, and semantic versioning.
 
 # This information will be displayed in the orb registry and is not mandatory.
 display:
