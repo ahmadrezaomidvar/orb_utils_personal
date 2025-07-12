@@ -9,7 +9,7 @@ steps:
 
   - run:
       name: Install dependencies
-      command: npm ci          # faster & more reproducible than `npm install`
+      command: npm ci
 
   - run:
       name: Run semantic-release
