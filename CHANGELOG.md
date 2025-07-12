@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/ahmadrezaomidvar/orb_utils_personal/compare/v0.3.0...v0.3.1) (2025-07-12)
+
+
+### Bug Fixes
+
+* Fix typo ([e9f2f99](https://github.com/ahmadrezaomidvar/orb_utils_personal/commit/e9f2f993e466f3e1b6de1057cba954c1a0a63b57))
+
 # [0.3.0](https://github.com/ahmadrezaomidvar/orb_utils_personal/compare/v0.2.1...v0.3.0) (2025-07-12)
 
 
