@@ -53,6 +53,13 @@ workflows:
       - command-test:
           filters: *filters
       # The orb must be re-packed for publishing, and saved to the workspace.
+      - github_release:
+          context: version-release
+          requires:
+            - command-test
+          filters:
+            branches:
+              only: main
       - orb-tools/pack:
           filters: *release-filters
       - orb-tools/publish:
@@ -63,13 +70,8 @@ workflows:
           requires:
             - orb-tools/pack
             - command-test
+            - github_release
           context: orb-publishing
           filters: *release-filters
-      - github_release:
-          context: version-release
-          requires:
-            - orb-tools/publish
-          filters:
-            branches:
-              only: main
+      
 
