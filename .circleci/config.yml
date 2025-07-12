@@ -45,8 +45,6 @@ workflows:
           orb_name: ahmadrezaomidvar/orb_utils_personal
           requires: [orb-tools/lint, orb-tools/pack, orb-tools/review, shellcheck/check]
           filters: *filters
-  release-main:
-    jobs:
       - github_release:
           context: version-release
           filters:
