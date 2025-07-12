@@ -28,21 +28,16 @@ jobs:
     steps:
       - checkout
 
-  github_release:
+  semantic-release:
     docker:
       - image: cimg/node:21.2.0
-    environment:
-      GIT_AUTHOR_NAME: circleci
-      GIT_AUTHOR_EMAIL: ci@users.noreply.github.com
-      GIT_COMMITTER_NAME: circleci
-      GIT_COMMITTER_EMAIL: ci@users.noreply.github.com
     steps:
       - checkout
       - run:
-          name: Install deps
+          name: Install dependencies
           command: npm install
       - run:
-          name: semantic-release
+          name: Run semantic-release
           command: npx semantic-release
 
 workflows:
@@ -53,7 +48,7 @@ workflows:
       - command-test:
           filters: *filters
       # The orb must be re-packed for publishing, and saved to the workspace.
-      - github_release:
+      - semantic-release:
           context: version-release
           requires:
             - command-test
@@ -70,8 +65,6 @@ workflows:
           requires:
             - orb-tools/pack
             - command-test
-            - github_release
+            - semantic-release
           context: orb-publishing
           filters: *release-filters
-      
-

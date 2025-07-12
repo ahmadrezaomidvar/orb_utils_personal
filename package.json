@@ -1,28 +1,16 @@
 {
   "name": "orb_utils_personal",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "0.3.1",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ahmadrezaomidvar/orb_utils_personal.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ahmadrezaomidvar/orb_utils_personal/issues"
-  },
-  "homepage": "https://github.com/ahmadrezaomidvar/orb_utils_personal#readme",
-  "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/commit-analyzer": "^13.0.1",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^11.0.3",
-    "@semantic-release/release-notes-generator": "^14.0.3",
-    "semantic-release": "^24.2.7"
+  "dependencies": {
+    "@google/semantic-release-replace-plugin": "~1.1.0",
+    "semantic-release": "~19.0.2",
+    "@semantic-release/changelog": "~6.0.1",
+    "@semantic-release/git": "~10.0.1",
+    "semantic-release-python": "~2.5.30"
   }
 }
