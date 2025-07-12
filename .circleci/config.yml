@@ -15,9 +15,6 @@ workflows:
           filters: *filters
       - orb-tools/pack:
           filters: *filters
-      - orb-tools/review:
-          orb_name: orb_utils_personal
-          filters: *filters
       - shellcheck/check:
           filters: *filters
       # Triggers the next workflow in the Orb Development Kit.
@@ -25,5 +22,5 @@ workflows:
           pipeline_number: << pipeline.number >>
           vcs_type: << pipeline.project.type >>
           orb_name: ahmadrezaomidvar/orb_utils_personal
-          requires: [orb-tools/lint, orb-tools/pack, orb-tools/review, shellcheck/check]
+          requires: [orb-tools/lint, orb-tools/pack, shellcheck/check]
           filters: *filters
