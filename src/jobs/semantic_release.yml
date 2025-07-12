@@ -1,0 +1,16 @@
+description: >
+  Publishes a semantic-release.
+
+docker:
+  - image: cimg/node:21.2.0
+
+steps:
+  - checkout
+
+  - run:
+      name: Install dependencies
+      command: npm ci
+
+  - run:
+      name: Run semantic-release
+      command: npx semantic-release
