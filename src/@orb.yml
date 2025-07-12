@@ -9,5 +9,32 @@ display:
   source_url: "https://github.com/ahmadrezaomidvar/orb_utils_personal"
 
 # If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
-# orbs:
-#  hello: circleci/hello-build@0.0.5
+orbs:
+  python: circleci/python@2.1.1
+  aws-cli: circleci/aws-cli@3.1.1
+  aws-ecr: circleci/aws-ecr@8.1.3
+commands:
+  assume_aws_role:
+    description: Assume role in AWS command.
+    parameters:
+      aws_org_id:
+        description: >
+          The AWS organization ID.
+        type: string
+      role_name:
+        description: >
+          The role name to assume.
+        type: string
+    steps:
+      - run:
+          name: Assume role
+          command: |
+            export AWS_ROLE_ARN="arn:aws:iam::<<parameters.aws_org_id>>:role/<<parameters.role_name>>"
+            export AWS_ROLE_SESSION_NAME="session-<<parameters.aws_org_id>>-<<parameters.role_name>>"
+            export AWS_ROLE=$(aws sts assume-role --role-arn $AWS_ROLE_ARN --role-session-name $AWS_ROLE_SESSION_NAME)
+            export AWS_ACCESS_KEY_ID=$(echo $AWS_ROLE | jq -r '.Credentials.AccessKeyId')
+            export AWS_SECRET_ACCESS_KEY=$(echo $AWS_ROLE | jq -r '.Credentials.SecretAccessKey')
+            export AWS_SESSION_TOKEN=$(echo $AWS_ROLE | jq -r '.Credentials.SessionToken')
+            echo "export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" >> $BASH_ENV
+            echo "export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY" >> $BASH_ENV
+            echo "export AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN" >> $BASH_ENV
