@@ -1,3 +1,10 @@
+## [0.3.4](https://github.com/ahmadrezaomidvar/orb_utils_personal/compare/v0.3.3...v0.3.4) (2025-07-13)
+
+
+### Bug Fixes
+
+* Add github release plugin ([47fb2ba](https://github.com/ahmadrezaomidvar/orb_utils_personal/commit/47fb2ba28de7c9cefb81e1d7f9de795c7a984d37))
+
 ## [0.3.3](https://github.com/ahmadrezaomidvar/orb_utils_personal/compare/v0.3.2...v0.3.3) (2025-07-13)
 
 
